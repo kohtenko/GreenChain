@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <meta charset="utf-8"> <!-- needed for ether symbol to display correctly -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://blockone.thomsonreuters.com/wallet-bar/bundle.js"></script>
+        <script src="https://rawgit.com/ethereum/web3.js/develop/dist/web3.min.js"></script>
+    </head>
+    <body>
+        <div id="app" style="display: none; margin-left: 20px">
+            <h1>Values in the blockchain</h1>
+            <span>Values (sum): </span><span id="values"></span><br>
+            <button onclick="addRandom()">Add random value</button>
+            <br><br><span id="status"></span>
+        </div>
+
+        <script>
+            // PUT YOUR CONTRACT'S ABI HERE
+            var abi = [{"constant":true,"inputs":[{"name":"user","type":"address"}],"name":"getUserDevices","outputs":[{"name":"devices","type":"bytes32[]"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"device","type":"bytes32"},{"name":"user","type":"address"}],"name":"addDevice","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"getEntitlement","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"device","type":"bytes32"}],"name":"getUserByDevice","outputs":[{"name":"user","type":"address"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"device","type":"bytes32"},{"name":"energyDelta","type":"uint256"}],"name":"accumulateEnergy","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"device","type":"bytes32"}],"name":"getDeviceAccumulatedEnergy","outputs":[{"name":"energy","type":"uint256"}],"payable":false,"type":"function"}];
+
+            // PUT YOUR UNIQUE DAPP ID HERE
+            var dappId = "com.dataart.green.chain";
+
+            // PUT YOUR CONTRACT ADDRESS HERE
+            var contractAddress = "0xa54e5f82f97b82f657af643c8c856169de639b5e";
+
+            var walletBar = new WalletBar({
+                dappNamespace: dappId,
+                blockchain: "ropsten"
+            });
+
+            var web3 = new Web3();
+            var myContract;
+            walletBar.applyHook(web3)
+            .then(function() {
+                document.getElementById("app").style.display="";
+                myContract = web3.eth.contract(abi).at(contractAddress);
+
+                setInterval( function () {
+                  myContract.read("abc", function(err, res) {
+                    document.getElementById("values").innerText = res;                    
+                  });
+                }, 3000);
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
+
+            function addRandom() {
+                var valueRnd = parseInt(Math.random() * 10);
+                console.log("Adding: " + valueRnd);
+                var account = walletBar.getCurrentAccount(); // get account selected in wallet bar
+                if (!account) return alert("You must log in to transact");
+                
+                walletBar.createSecureSigner();
+                myContract.save.estimateGas(valueRnd, { from: account }, function (err1, gas) {
+                    if(err1) return alert("Error: " + err1);
+                    myContract.save.sendTransaction(valueRnd, { gas: gas, from: account }, function (err2, hash) {
+                        if(err2) return alert("Error: "+err2);
+                        document.getElementById("status").innerText = "Last vote Tx ID: " + hash;
+                    });
+                });
+            }
+        </script>
+    </body>
+</html>
