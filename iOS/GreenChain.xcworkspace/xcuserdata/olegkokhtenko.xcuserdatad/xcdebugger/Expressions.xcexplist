@@ -28,10 +28,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MarketItem.init(with : JSON) -&gt; MarketItem:MarketItem.swift">
+         contextName = "MoneyViewController.(viewDidLoad() -&gt; ()).(closure #1).(closure #1):MoneyViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "json[&quot;image&quot;].stringValue">
+               value = "self.progressBar.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MoneyViewController.(update() -&gt; ()).(closure #1):MoneyViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "JSON(data: data)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -39,10 +47,10 @@
          contextName = "MarketViewController.numberOfSections(in : UICollectionView) -&gt; Int:MarketViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "MoneyViewController.(viewDidLoad() -&gt; ()).(closure #1).(closure #1):MoneyViewController.swift">
+         contextName = "MarketItem.init(with : JSON) -&gt; MarketItem:MarketItem.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.progressBar.value">
+               value = "json[&quot;image&quot;].stringValue">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -7,29 +7,22 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class DeviceDetailsViewController: UIViewController {
 
+    var device: Device!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        Alamofire.request(BASE_URL + "device/energy/" + device.id).responseJSON { (response) in
+            let json = JSON(data: response.data!)
+            self.device.energyValues = []
+            for (_, subJson):(String, JSON) in json["energy"] {
+                self.device.energyValues?.append(subJson.intValue)
+            }
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

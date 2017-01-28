@@ -19,8 +19,8 @@ class MarketViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Alamofire.request("https://httpbin.org/get").responseJSON { (response) in
-        let closure: (DataResponse<Any>)->Void = { (response) in
+        Alamofire.request(BASE_URL + "green-market/goods").responseJSON { (response) in
+        //let closure: (DataResponse<Any>)->Void = { (response) in
             let json = JSON(data: response.data!)
             self.items = [String: [MarketItem]]()
             for (key, subJson):(String, JSON) in json {
@@ -33,13 +33,13 @@ class MarketViewController: UIViewController, UICollectionViewDelegate, UICollec
             }
             self.collectionView.reloadData()
         }
-        let data = NSData(contentsOfFile: Bundle.main.path(forResource: "market", ofType: "json")!)!
-        let result = Result<Any>.success("")
-        let dataResp = DataResponse<Any>(request: nil,
-                                         response: nil,
-                                         data: data as Data,
-                                         result: result)
-        closure(dataResp)
+        //let data = NSData(contentsOfFile: Bundle.main.path(forResource: "market", ofType: "json")!)!
+        //let result = Result<Any>.success("")
+        //let dataResp = DataResponse<Any>(request: nil,
+        //                                 response: nil,
+        //                                data: data as Data,
+        //                                 result: result)
+        //closure(dataResp)
     }
 
     private func key(forSection section: Int) -> String {
