@@ -15,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        let tabbarController = window?.rootViewController as! UITabBarController
+        tabbarController.tabBar.barTintColor = UIColor.init(red: 39/255, green: 63/255, blue: 97/255, alpha: 0.5)
+        tabbarController.tabBar.tintColor = UIColor.white
         return true
     }
 
