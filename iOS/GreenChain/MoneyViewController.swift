@@ -11,10 +11,13 @@ import MBCircularProgressBar
 import Alamofire
 import SwiftyJSON
 import Async
+import Charts
 
 class MoneyViewController: UIViewController {
 
     @IBOutlet weak var progressBar: MBCircularProgressBarView!
+    @IBOutlet weak var chartView: BarChartView!
+
     @IBOutlet weak var valueLabel: UILabel!
     private let interval: TimeInterval = 1.5
     private var animationClosure: (() -> Void)!
@@ -40,6 +43,29 @@ class MoneyViewController: UIViewController {
         Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { (timer) in
             self.animationClosure()
         }
+
+        setupAxis(chartView.xAxis)
+        setupAxis(chartView.rightAxis)
+        setupAxis(chartView.leftAxis)
+
+        chartView.legend.drawInside = false
+        chartView.drawBarShadowEnabled = false;
+        chartView.drawValueAboveBarEnabled = false
+
+
+
+        chartView.maxVisibleCount = 10;
+        chartView.chartDescription?.text = nil
+    }
+
+    func setupAxis(_ axis: AxisBase) {
+        axis.drawLabelsEnabled = false
+        axis.drawGridLinesEnabled = false
+        axis.drawAxisLineEnabled = false
+        axis.drawAxisLineEnabled = false
+        if let yAxis = axis as? YAxis {
+            yAxis.drawTopYLabelEntryEnabled = false
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +78,18 @@ class MoneyViewController: UIViewController {
         rotate.repeatCount = MAXFLOAT
         self.progressBar.layer.add(rotate, forKey: "rotation")
         update()
+        let dataSet = BarChartDataSet(values: [
+            BarChartDataEntry(x: 1, yValues: [10], label: "label"),
+            BarChartDataEntry(x: 2, y: 50),
+            BarChartDataEntry(x: 3, y: 100),
+            ],
+                                   label: nil)
+        dataSet.colors = [NSUIColor(cgColor: self.progressBar.progressColor.cgColor)]
+        dataSet.drawValuesEnabled = false
+
+        let data = BarChartData(dataSet: dataSet)
+        data.barWidth = 0.9
+        chartView.data = data
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -68,11 +106,10 @@ class MoneyViewController: UIViewController {
     }
 
     private func update() {
-        return
         if shouldMakeRequests {
-            Alamofire.request(BASE_URL + "user/devices").responseJSON { (response) in
+            Alamofire.request(BASE_URL + "user/green-balance").responseJSON { (response) in
                 if let data = response.data {
-                    self.moneyValue = JSON(data: data).intValue
+                    self.moneyValue = JSON(data: data)["balance"].intValue
                     self.valueLabel.text = "\(self.moneyValue)"
                 }
                 Async.main(after: 0.5) {

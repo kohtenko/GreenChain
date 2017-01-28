@@ -24,11 +24,13 @@ enum DeviceType: String {
 
 class Device {
 
+    var id: String
     var name: String
     var type: DeviceType
-    var energyValues: [Float]?
+    var energyValues: [Int]?
 
     init(with json: JSON) {
+        id = json["id"].stringValue
         name = json["name"].stringValue
         type = json["type"].stringValue == "type1" ? .solar : .wind
     }

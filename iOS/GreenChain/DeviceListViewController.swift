@@ -43,7 +43,14 @@ class DeviceListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.performSegue(withIdentifier: "push", sender: indexPath)
+        self.performSegue(withIdentifier: "push", sender: devices?[indexPath.row])
     }
-    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let device = sender as? Device,
+            let deviceController = segue.destination as? DeviceDetailsViewController {
+            deviceController.device = device
+        }
+    }
+
 }
