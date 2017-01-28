@@ -10,15 +10,15 @@ import UIKit
 
 class DeviceCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var iconView: UIImageView!
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    var device: Device! {
+        didSet {
+            nameLabel.text = device.name
+            iconView.image = device.type.icon
+        }
     }
 
 }

@@ -21,11 +21,23 @@ class MarketImagesTableViewCell: MarketBasicTableViewCell, UICollectionViewDataS
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return 2
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath)
+        if let imageView = cell.contentView.subviews.first as? UIImageView {
+            if indexPath.row == 0 {
+                imageView.image = item.image
+            } else {
+                imageView.image = UIImage(named: "map")
+            }
+        }
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return collectionView.frame.size
     }
     
 }

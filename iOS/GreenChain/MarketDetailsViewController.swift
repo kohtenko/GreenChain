@@ -16,6 +16,7 @@ class MarketDetailsViewController: UIViewController, UITableViewDelegate, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = marketItem.title
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.reloadData()
@@ -30,6 +31,10 @@ class MarketDetailsViewController: UIViewController, UITableViewDelegate, UITabl
             return marketItem.detailsValues?.count ?? 0
         }
         return 1
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0;
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

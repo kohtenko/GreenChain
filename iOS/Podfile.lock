@@ -1,18 +1,21 @@
 PODS:
   - Alamofire (4.3.0)
+  - AsyncSwift (2.0.1)
   - MBCircularProgressBar (0.3.5)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire
+  - AsyncSwift
   - MBCircularProgressBar
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  AsyncSwift: 632138e42ead868b53c745fcde9bf733ce1527ad
   MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: feca9e834ef672a02c5426403dca112c2f19e651
+PODFILE CHECKSUM: 127dee3efb6548848ba6ffb92a5cb46f6e8bdef2
 
 COCOAPODS: 1.1.1

@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AsyncSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBCircularProgressBar-MBCircularProgressBar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,7 +37,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>30FCFF5B18730F81C327DEB48BAC73FE</key>
+		<key>18AD788312B3D73CCFDBA124E11D3540</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7F45F2F21482C3777494ACE42307212D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,12 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F579AA4D4755DD9570010BC36D0422F7</key>
+		<key>F379BAE3BAC12B4FF3DCDB6BCBD1080E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F7B5B84FC4B6B45726B0F5CB32FBCF03</key>
+		<key>F579AA4D4755DD9570010BC36D0422F7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
