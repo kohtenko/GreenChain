@@ -1,5 +1,5 @@
-const contractAddress = '0xf2623761b6bcea312cac78e088f1e67740de356a';
-const contractAbi = [{"constant":true,"inputs":[{"name":"user","type":"address"}],"name":"getUserDevices","outputs":[{"name":"devices","type":"bytes32[]"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"user","type":"address"}],"name":"getGreenBalance","outputs":[{"name":"balance","type":"int256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"device","type":"bytes32"},{"name":"user","type":"address"}],"name":"addDevice","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"user","type":"address"}],"name":"removeDevices","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"device","type":"bytes32"}],"name":"getUserByDevice","outputs":[{"name":"user","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"device","type":"bytes32"}],"name":"getDeviceConsumedEnergy","outputs":[{"name":"energy","type":"uint256[]"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"user","type":"address"}],"name":"getGreenEnergy","outputs":[{"name":"balance","type":"int256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"device","type":"bytes32"},{"name":"energyDelta","type":"uint256"}],"name":"consumeEnergy","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"device","type":"bytes32"},{"name":"energyDelta","type":"uint256"}],"name":"accumulateEnergy","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"device","type":"bytes32"}],"name":"getDeviceAccumulatedEnergy","outputs":[{"name":"energy","type":"uint256[]"}],"payable":false,"type":"function"}];
+const contractAddress = '0x977ddf44438d540892d1b8618fea653953999716';
+const contractAbi = [{"constant":true,"inputs":[{"name":"user","type":"address"}],"name":"getUserDevices","outputs":[{"name":"devices","type":"bytes32[]"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"user","type":"address"}],"name":"getGreenBalance","outputs":[{"name":"balance","type":"int256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"device","type":"bytes32"},{"name":"user","type":"address"}],"name":"addDevice","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"user","type":"address"}],"name":"removeDevices","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"user","type":"address"},{"name":"price","type":"uint256"},{"name":"good","type":"bytes32"}],"name":"buy","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"device","type":"bytes32"}],"name":"getUserByDevice","outputs":[{"name":"user","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"device","type":"bytes32"}],"name":"getDeviceConsumedEnergy","outputs":[{"name":"energy","type":"uint256[]"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"user","type":"address"}],"name":"getGreenEnergy","outputs":[{"name":"balance","type":"int256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"device","type":"bytes32"},{"name":"energyDelta","type":"uint256"}],"name":"consumeEnergy","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"device","type":"bytes32"},{"name":"energyDelta","type":"uint256"}],"name":"accumulateEnergy","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"device","type":"bytes32"}],"name":"getDeviceAccumulatedEnergy","outputs":[{"name":"energy","type":"uint256[]"}],"payable":false,"type":"function"}];
 
 const Web3 = require('web3');
 const web3 = new Web3();
@@ -70,6 +70,23 @@ api.getDeviceAccumulatedEnergy = function(device, done) {
 api.getGreenBalance = function(user, done) {
   contract.getGreenBalance(user, (err, res) => {
     done(err, res);
+  });
+};
+
+api.buy = function(user, price, good, done) {
+  price = parseInt(price);
+  contract.buy.estimateGas(user, price, good, { from: one_user }, (err, gas) => {
+    if (err) { return done(err); }
+    console.log('Gas estimated for [buy] ' + gas);
+
+    contract.buy.sendTransaction(user, price, good, { gas: gas, from: one_user }, (err, hash) => {
+      if (err) {
+        console.log('Method [buy] error: ' + err);
+        return done(err); 
+      }
+
+      console.log(`Method [buy] with data: ${ good } -> ${ price } will be executed in ${ hash }`);
+    });
   });
 };
 

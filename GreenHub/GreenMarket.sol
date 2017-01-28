@@ -36,7 +36,9 @@ contract GreenChain {
   function accumulateEnergy(bytes32 device, uint energyDelta) {
       address realUser = deviceToUser[device];
       if (msg.sender == realUser) {
-          accumulatedEnergyByDevice[device].push(energyDelta);   
+          accumulatedEnergyByDevice[device].push(energyDelta);
+          
+          userBalance[deviceToUser[device]] += int(energyDelta);
       }
   }
   
@@ -67,11 +69,20 @@ contract GreenChain {
   }
   
   /* Section for Market information and operations */
+  mapping (address => int) userBalance;
+  mapping (address => bytes32[]) whatUserBought;
   
   function getGreenBalance(address user) constant returns (int balance) {
-      int sum = getGreenEnergy(user);
       int k = 3; //TBD use oraclize to get actual price information
-      return sum / k;
+      int bal = userBalance[user];
+      return bal / k;
+  }
+  
+  function buy(address user, uint price, bytes32 good) {
+      if (msg.sender == user) {
+          userBalance[user] -= int(price * 3);
+          whatUserBought[user].push(good);
+      }
   }
   
 }
