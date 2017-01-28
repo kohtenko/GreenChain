@@ -12,4 +12,9 @@ class MarketCollectionCell: UICollectionViewCell {
 
     @IBOutlet weak var image: UIImageView!
 
+    var marketItem: MarketItem? {
+        didSet {
+            image.image = marketItem?.image
+        }
+    }
 }

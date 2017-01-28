@@ -7,38 +7,43 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class MarketViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
-    private var images: [ Int: [UIImage]]!
+    private var items: [String: [MarketItem]]?
     private let titles = ["Featured", "Food", "Services", "Devices"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        images = [
-            0: [
-                UIImage(named: "f1")!,
-                UIImage(named: "f2")!
-            ],
-            1: [
-                UIImage(named: "1")!,
-                UIImage(named: "2")!,
-                UIImage(named: "3")!
-            ],
-            2: [
-                UIImage(named: "4")!,
-                UIImage(named: "5")!,
-                UIImage(named: "6")!
-            ],
-            3: [
-                UIImage(named: "7")!,
-                UIImage(named: "8")!,
-                UIImage(named: "9")!
-            ]
-        ]
-        // Do any additional setup after loading the view.
+        //Alamofire.request("https://httpbin.org/get").responseJSON { (response) in
+        let closure: (DataResponse<Any>)->Void = { (response) in
+            let json = JSON(data: response.data!)
+            self.items = [String: [MarketItem]]()
+            for (key, subJson):(String, JSON) in json {
+                if self.items?[key] == nil {
+                    self.items?[key] = []
+                }
+                for (_, itemJson):(String, JSON) in subJson {
+                    self.items?[key]?.append(MarketItem(with: itemJson))
+                }
+            }
+            self.collectionView.reloadData()
+        }
+        let data = NSData(contentsOfFile: Bundle.main.path(forResource: "market", ofType: "json")!)!
+        let result = Result<Any>.success("")
+        let dataResp = DataResponse<Any>(request: nil,
+                                            response: nil,
+                                            data: data as Data,
+                                            result: result)
+        closure(dataResp)
+    }
+
+    private func key(forSection section: Int) -> String {
+        return titles[section]
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -48,23 +53,23 @@ class MarketViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
+        return items?.count ?? 0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images[section]!.count
+        return items?[key(forSection: section)]?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "market", for: indexPath) as! MarketCollectionCell
 
-        cell.image.image = images[indexPath.section]?[indexPath.row]
+        cell.marketItem = items?[key(forSection: indexPath.section)]?[indexPath.row]
 
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return images[indexPath.section]![indexPath.row].size
+        return items?[key(forSection: indexPath.section)]?[indexPath.row].image?.size ?? CGSize.zero
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -86,10 +91,10 @@ class MarketViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = sender as? IndexPath,
-        let controller = segue.destination as? MarketDetailsViewController else {
-            return
+            let controller = segue.destination as? MarketDetailsViewController else {
+                return
         }
-controller.
+        //controller.
     }
-
+    
 }

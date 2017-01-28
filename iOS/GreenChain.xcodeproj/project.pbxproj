@@ -21,6 +21,8 @@
 		38A8EF141E3CB16800355C36 /* MarketCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A8EF131E3CB16800355C36 /* MarketCollectionCell.swift */; };
 		38A8EF161E3CBE0B00355C36 /* MarketHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A8EF151E3CBE0B00355C36 /* MarketHeaderView.swift */; };
 		38A8EF181E3CC55C00355C36 /* MarketDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A8EF171E3CC55C00355C36 /* MarketDetailsViewController.swift */; };
+		38A8EF1A1E3CC7AD00355C36 /* MarketItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A8EF191E3CC7AD00355C36 /* MarketItem.swift */; };
+		38A8EF1D1E3CD08D00355C36 /* market.json in Resources */ = {isa = PBXBuildFile; fileRef = 38A8EF1C1E3CD08D00355C36 /* market.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		38A8EF131E3CB16800355C36 /* MarketCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketCollectionCell.swift; sourceTree = "<group>"; };
 		38A8EF151E3CBE0B00355C36 /* MarketHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketHeaderView.swift; sourceTree = "<group>"; };
 		38A8EF171E3CC55C00355C36 /* MarketDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketDetailsViewController.swift; sourceTree = "<group>"; };
+		38A8EF191E3CC7AD00355C36 /* MarketItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketItem.swift; sourceTree = "<group>"; };
+		38A8EF1C1E3CD08D00355C36 /* market.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = market.json; sourceTree = "<group>"; };
 		4F9691F335CE741C4EF601AE /* Pods-GreenChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreenChain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GreenChain/Pods-GreenChain.debug.xcconfig"; sourceTree = "<group>"; };
 		DCFCB1C0BAF6049840931783 /* Pods-GreenChain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreenChain.release.xcconfig"; path = "Pods/Target Support Files/Pods-GreenChain/Pods-GreenChain.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,12 +100,22 @@
 				38A8EF131E3CB16800355C36 /* MarketCollectionCell.swift */,
 				38A8EF151E3CBE0B00355C36 /* MarketHeaderView.swift */,
 				381BA2941E3C8790009C7F55 /* MoneyViewController.swift */,
+				38A8EF191E3CC7AD00355C36 /* MarketItem.swift */,
 				381BA2801E3C832D009C7F55 /* Main.storyboard */,
 				38A8EF0F1E3CAE2700355C36 /* Assets.xcassets */,
+				38A8EF1B1E3CD08D00355C36 /* DummyFiles */,
 				381BA2851E3C832D009C7F55 /* LaunchScreen.storyboard */,
 				381BA2881E3C832D009C7F55 /* Info.plist */,
 			);
 			path = GreenChain;
+			sourceTree = "<group>";
+		};
+		38A8EF1B1E3CD08D00355C36 /* DummyFiles */ = {
+			isa = PBXGroup;
+			children = (
+				38A8EF1C1E3CD08D00355C36 /* market.json */,
+			);
+			path = DummyFiles;
 			sourceTree = "<group>";
 		};
 		64BA914AB4B3D709706F8BA4 /* Frameworks */ = {
@@ -178,6 +192,7 @@
 				381BA2871E3C832D009C7F55 /* LaunchScreen.storyboard in Resources */,
 				38A8EF101E3CAE2700355C36 /* Assets.xcassets in Resources */,
 				381BA2821E3C832D009C7F55 /* Main.storyboard in Resources */,
+				38A8EF1D1E3CD08D00355C36 /* market.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +254,7 @@
 				381BA2931E3C853F009C7F55 /* MarketViewController.swift in Sources */,
 				381BA2911E3C84E6009C7F55 /* DeviceDetailsViewController.swift in Sources */,
 				381BA28F1E3C84D9009C7F55 /* DeviceListViewController.swift in Sources */,
+				38A8EF1A1E3CC7AD00355C36 /* MarketItem.swift in Sources */,
 				381BA2951E3C8790009C7F55 /* MoneyViewController.swift in Sources */,
 				381BA27B1E3C832D009C7F55 /* AppDelegate.swift in Sources */,
 				38A8EF141E3CB16800355C36 /* MarketCollectionCell.swift in Sources */,

@@ -1,0 +1,153 @@
+{
+    "Featured":[
+                {
+                "title":"one",
+                "subtitle":"two",
+                "image":"f1",
+                "price":1,
+                "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
+                "details":[
+                           {
+                           "Fats":"A lot",
+                           "Cats":"A few"
+                           }
+                           ]
+                },
+                {
+                "title":"one",
+                "subtitle":"two",
+                "image":"f2",
+                "price":2,
+                "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
+                "details":[
+                           {
+                           "Fats":"A lot",
+                           "Cats":"A few"
+                           }
+                           ]
+                }
+                ],
+    "Food":[
+            {
+            "title":"one",
+            "subtitle":"two",
+            "image":"1",
+            "price":1,
+            "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
+            "details":[
+                       {
+                       "Fats":"A lot",
+                       "Cats":"A few"
+                       }
+                       ]
+            },
+            {
+            "title":"one",
+            "subtitle":"two",
+            "image":"2",
+            "price":2,
+            "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
+            "details":[
+                       {
+                       "Fats":"A lot",
+                       "Cats":"A few"
+                       }
+                       ]
+            },
+            {
+            "title":"one",
+            "subtitle":"two",
+            "image":"3",
+            "price":1,
+            "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
+            "details":[
+                       {
+                       "Fats":"A lot",
+                       "Cats":"A few"
+                       }
+                       ]
+            }
+            ],
+    "Services":[
+                {
+                "title":"one",
+                "subtitle":"two",
+                "image":"4",
+                "price":1,
+                "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
+                "details":[
+                           {
+                           "Fats":"A lot",
+                           "Cats":"A few"
+                           }
+                           ]
+                },
+                {
+                "title":"one",
+                "subtitle":"two",
+                "image":"5",
+                "price":2,
+                "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
+                "details":[
+                           {
+                           "Fats":"A lot",
+                           "Cats":"A few"
+                           }
+                           ]
+                },
+                {
+                "title":"one",
+                "subtitle":"two",
+                "image":"6",
+                "price":1,
+                "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
+                "details":[
+                           {
+                           "Fats":"A lot",
+                           "Cats":"A few"
+                           }
+                           ]
+                }
+                ],
+    "Devices":[
+               {
+               "title":"one",
+               "subtitle":"two",
+               "image":"7",
+               "price":1,
+               "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
+               "details":[
+                          {
+                          "Fats":"A lot",
+                          "Cats":"A few"
+                          }
+                          ]
+               },
+               {
+               "title":"one",
+               "subtitle":"two",
+               "image":"8",
+               "price":2,
+               "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
+               "details":[  
+                          {  
+                          "Fats":"A lot",
+                          "Cats":"A few"
+                          }
+                          ]
+               },
+               {  
+               "title":"one",
+               "subtitle":"two",
+               "image":"9",
+               "price":1,
+               "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
+               "details":[  
+                          {  
+                          "Fats":"A lot",
+                          "Cats":"A few"
+                          }
+                          ]
+               }
+               ]
+}
