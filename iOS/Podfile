@@ -3,8 +3,11 @@
 use_frameworks!
 
 target 'GreenChain' do
-  
 
 	pod 'MBCircularProgressBar'
+    pod 'SwiftyJSON'
+    pod 'Alamofire'
+    pod 'AsyncSwift'
+    pod 'Charts'
 
 end

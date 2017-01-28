@@ -1,0 +1,17 @@
+{ 
+"Featured" : [
+	{
+	"title" : "one",
+	"subtitle" : "two",
+	"image" : "f1",
+	"price" : 1,
+	"description" : "Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
+	"details" : [
+	{
+	"Fats" : "A lot",
+	"Cats" : "A few"
+	}
+	]
+	}
+]
+}

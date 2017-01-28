@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "MarketViewController.collectionView(UICollectionView, numberOfItemsInSection : Int) -&gt; Int:MarketViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "items?[key(forSection: section)]">
+            </PersistentString>
+            <PersistentString
+               value = "items?[key(forSection: section)]?.count">
+            </PersistentString>
+            <PersistentString
+               value = "key(forSection: section)">
+            </PersistentString>
+            <PersistentString
+               value = "items?[key(forSection: section)]?.count ?? 0">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MarketViewController.collectionView(UICollectionView, layout : UICollectionViewLayout, sizeForItemAt : IndexPath) -&gt; CGSize:MarketViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "items?[key(forSection: indexPath.section)]?[indexPath.row].image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MarketItem.init(with : JSON) -&gt; MarketItem:MarketItem.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[&quot;image&quot;].stringValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MarketViewController.numberOfSections(in : UICollectionView) -&gt; Int:MarketViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MoneyViewController.(viewDidLoad() -&gt; ()).(closure #1).(closure #1):MoneyViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.progressBar.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
