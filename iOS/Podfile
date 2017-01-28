@@ -8,5 +8,6 @@ target 'GreenChain' do
     pod 'SwiftyJSON'
     pod 'Alamofire'
     pod 'AsyncSwift'
+    pod 'Charts'
 
 end

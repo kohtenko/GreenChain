@@ -68,6 +68,7 @@ class MoneyViewController: UIViewController {
     }
 
     private func update() {
+        return
         if shouldMakeRequests {
             Alamofire.request(BASE_URL + "user/devices").responseJSON { (response) in
                 if let data = response.data {
