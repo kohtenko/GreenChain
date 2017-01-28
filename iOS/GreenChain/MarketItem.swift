@@ -26,10 +26,14 @@ class MarketItem {
         description = json["description"].stringValue
         if !json["details"].isEmpty {
             detailsValues = [String : String]()
-            for (key,subJson):(String, JSON) in json {
+            for (key,subJson):(String, JSON) in json["details"] {
                 detailsValues?[key] = subJson.stringValue
             }
         }
+    }
+
+    func key(at index: Int) -> String {
+        return detailsValues?.keys.sorted()[index] ?? ""
     }
 
 }

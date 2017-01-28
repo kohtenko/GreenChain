@@ -36,9 +36,9 @@ class MarketViewController: UIViewController, UICollectionViewDelegate, UICollec
         let data = NSData(contentsOfFile: Bundle.main.path(forResource: "market", ofType: "json")!)!
         let result = Result<Any>.success("")
         let dataResp = DataResponse<Any>(request: nil,
-                                            response: nil,
-                                            data: data as Data,
-                                            result: result)
+                                         response: nil,
+                                         data: data as Data,
+                                         result: result)
         closure(dataResp)
     }
 
@@ -86,15 +86,15 @@ class MarketViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "push", sender: indexPath)
+        performSegue(withIdentifier: "push", sender: items?[key(forSection: indexPath.section)]?[indexPath.row])
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let indexPath = sender as? IndexPath,
+        guard let item = sender as? MarketItem,
             let controller = segue.destination as? MarketDetailsViewController else {
                 return
         }
-        //controller.
+        controller.marketItem = item
     }
     
 }

@@ -6,12 +6,10 @@
                 "image":"f1",
                 "price":1,
                 "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
-                "details":[
-                           {
-                           "Fats":"A lot",
-                           "Cats":"A few"
-                           }
-                           ]
+                "details":{
+                "Fats":"A lot",
+                "Cats":"A few"
+                }
                 },
                 {
                 "title":"one",
@@ -19,12 +17,10 @@
                 "image":"f2",
                 "price":2,
                 "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
-                "details":[
-                           {
-                           "Fats":"A lot",
-                           "Cats":"A few"
-                           }
-                           ]
+                "details":{
+                "Fats":"A lot",
+                "Cats":"A few"
+                }
                 }
                 ],
     "Food":[
@@ -34,12 +30,10 @@
             "image":"1",
             "price":1,
             "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
-            "details":[
-                       {
-                       "Fats":"A lot",
-                       "Cats":"A few"
-                       }
-                       ]
+            "details":{
+            "Fats":"A lot",
+            "Cats":"A few"
+            }
             },
             {
             "title":"one",
@@ -47,12 +41,10 @@
             "image":"2",
             "price":2,
             "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
-            "details":[
-                       {
-                       "Fats":"A lot",
-                       "Cats":"A few"
-                       }
-                       ]
+            "details":{
+            "Fats":"A lot",
+            "Cats":"A few"
+            }
             },
             {
             "title":"one",
@@ -60,12 +52,10 @@
             "image":"3",
             "price":1,
             "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
-            "details":[
-                       {
-                       "Fats":"A lot",
-                       "Cats":"A few"
-                       }
-                       ]
+            "details":{
+            "Fats":"A lot",
+            "Cats":"A few"
+            }
             }
             ],
     "Services":[
@@ -75,12 +65,10 @@
                 "image":"4",
                 "price":1,
                 "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
-                "details":[
-                           {
-                           "Fats":"A lot",
-                           "Cats":"A few"
-                           }
-                           ]
+                "details":{
+                "Fats":"A lot",
+                "Cats":"A few"
+                }
                 },
                 {
                 "title":"one",
@@ -88,12 +76,10 @@
                 "image":"5",
                 "price":2,
                 "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
-                "details":[
-                           {
-                           "Fats":"A lot",
-                           "Cats":"A few"
-                           }
-                           ]
+                "details":{
+                "Fats":"A lot",
+                "Cats":"A few"
+                }
                 },
                 {
                 "title":"one",
@@ -101,12 +87,10 @@
                 "image":"6",
                 "price":1,
                 "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
-                "details":[
-                           {
-                           "Fats":"A lot",
-                           "Cats":"A few"
-                           }
-                           ]
+                "details":{
+                "Fats":"A lot",
+                "Cats":"A few"
+                }
                 }
                 ],
     "Devices":[
@@ -116,12 +100,10 @@
                "image":"7",
                "price":1,
                "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
-               "details":[
-                          {
-                          "Fats":"A lot",
-                          "Cats":"A few"
-                          }
-                          ]
+               "details":{
+               "Fats":"A lot",
+               "Cats":"A few"
+               }
                },
                {
                "title":"one",
@@ -129,12 +111,10 @@
                "image":"8",
                "price":2,
                "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
-               "details":[  
-                          {  
-                          "Fats":"A lot",
-                          "Cats":"A few"
-                          }
-                          ]
+               "details":{  
+               "Fats":"A lot",
+               "Cats":"A few"
+               }
                },
                {  
                "title":"one",
@@ -142,12 +122,10 @@
                "image":"9",
                "price":1,
                "description":"Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here. Some long string goes here.",
-               "details":[  
-                          {  
-                          "Fats":"A lot",
-                          "Cats":"A few"
-                          }
-                          ]
+               "details":{  
+               "Fats":"A lot",
+               "Cats":"A few"
+               }
                }
                ]
 }
