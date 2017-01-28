@@ -1,0 +1,33 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+  <img alt="SolarPanel" src="wind_turbine.gif">
+	<div id="content"></div>
+
+	<script type="text/javascript">
+    var content = document.getElementById('content');
+    var socket = new WebSocket('ws://localhost:1332');
+
+    socket.onopen = function() {
+      setInterval(function() {
+        var energy = parseInt(Math.random() * 10) + 1;
+        var text = 'Wind Turbine has generated some energy: ' + energy;
+
+        document.getElementById("content").innerText = text;
+        
+        socket.send('' + energy);      	
+      }, 2000);
+    };
+
+    socket.onmessage = function(message) {
+      console.log('Message: ' + message);
+    };
+
+    socket.onerror = function(error) {
+      console.log('WebSocket error: ' + error);
+    };
+  </script>
+</body>
+</html>
