@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27147EF85FD8BA482B5019CB /* Pods_GreenChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E2727F87F4D0B3A4C59B83 /* Pods_GreenChain.framework */; };
 		381BA27B1E3C832D009C7F55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BA27A1E3C832D009C7F55 /* AppDelegate.swift */; };
 		381BA2821E3C832D009C7F55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381BA2801E3C832D009C7F55 /* Main.storyboard */; };
 		381BA2841E3C832D009C7F55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 381BA2831E3C832D009C7F55 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13E2727F87F4D0B3A4C59B83 /* Pods_GreenChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GreenChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		381BA2771E3C832D009C7F55 /* GreenChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreenChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		381BA27A1E3C832D009C7F55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		381BA2811E3C832D009C7F55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,6 +32,8 @@
 		381BA2921E3C853F009C7F55 /* MarketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
 		381BA2941E3C8790009C7F55 /* MoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyViewController.swift; sourceTree = "<group>"; };
 		381BA2961E3C894B009C7F55 /* DeviceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
+		4F9691F335CE741C4EF601AE /* Pods-GreenChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreenChain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GreenChain/Pods-GreenChain.debug.xcconfig"; sourceTree = "<group>"; };
+		DCFCB1C0BAF6049840931783 /* Pods-GreenChain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreenChain.release.xcconfig"; path = "Pods/Target Support Files/Pods-GreenChain/Pods-GreenChain.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +41,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27147EF85FD8BA482B5019CB /* Pods_GreenChain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D797964586FB1380390E450 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F9691F335CE741C4EF601AE /* Pods-GreenChain.debug.xcconfig */,
+				DCFCB1C0BAF6049840931783 /* Pods-GreenChain.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		381BA26E1E3C832D009C7F55 = {
 			isa = PBXGroup;
 			children = (
 				381BA2791E3C832D009C7F55 /* GreenChain */,
 				381BA2781E3C832D009C7F55 /* Products */,
+				0D797964586FB1380390E450 /* Pods */,
+				64BA914AB4B3D709706F8BA4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +92,14 @@
 			path = GreenChain;
 			sourceTree = "<group>";
 		};
+		64BA914AB4B3D709706F8BA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13E2727F87F4D0B3A4C59B83 /* Pods_GreenChain.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 381BA28B1E3C832D009C7F55 /* Build configuration list for PBXNativeTarget "GreenChain" */;
 			buildPhases = (
+				A02CACC68216DB8833CB7BED /* [CP] Check Pods Manifest.lock */,
 				381BA2731E3C832D009C7F55 /* Sources */,
 				381BA2741E3C832D009C7F55 /* Frameworks */,
 				381BA2751E3C832D009C7F55 /* Resources */,
+				46FE8470846500F99C228500 /* [CP] Embed Pods Frameworks */,
+				C89917DE12817C452B420917 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,6 +170,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		46FE8470846500F99C228500 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GreenChain/Pods-GreenChain-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A02CACC68216DB8833CB7BED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C89917DE12817C452B420917 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GreenChain/Pods-GreenChain-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		381BA2731E3C832D009C7F55 /* Sources */ = {
@@ -273,6 +348,7 @@
 		};
 		381BA28C1E3C832D009C7F55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F9691F335CE741C4EF601AE /* Pods-GreenChain.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VXG9VUX937;
@@ -286,6 +362,7 @@
 		};
 		381BA28D1E3C832D009C7F55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCFCB1C0BAF6049840931783 /* Pods-GreenChain.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VXG9VUX937;

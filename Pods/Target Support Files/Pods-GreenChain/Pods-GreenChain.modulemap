@@ -1,0 +1,6 @@
+framework module Pods_GreenChain {
+  umbrella header "Pods-GreenChain-umbrella.h"
+
+  export *
+  module * { export * }
+}
