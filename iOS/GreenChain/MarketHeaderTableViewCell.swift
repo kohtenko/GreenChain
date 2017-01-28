@@ -18,7 +18,7 @@ class MarketHeaderTableViewCell: MarketBasicTableViewCell {
         didSet {
             nameLabel.text = item.title
             subnameLabel.text = item.subtitle
-            priceLabel.text = "\(item.price!)"
+            priceLabel.text = "\(item.price)"
         }
     }
     

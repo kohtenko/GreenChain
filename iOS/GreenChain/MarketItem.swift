@@ -11,12 +11,12 @@ import SwiftyJSON
 
 class MarketItem {
 
-    var title: String!
-    var subtitle: String!
+    var title: String
+    var subtitle: String
     var image: UIImage?
-    var price: Int!
+    var price: Int
     var detailsValues: [String : String]?
-    var description: String!
+    var description: String
 
     init(with json: JSON) {
         title = json["title"].stringValue

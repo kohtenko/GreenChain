@@ -15,7 +15,7 @@ class MarketViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var collectionView: UICollectionView!
 
     private var items: [String: [MarketItem]]?
-    private let titles = ["Featured", "Food", "Services", "Devices"]
+    private let titles = ["Featured", "Organic Fruits", "Organic Vegetables", "Currency"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
