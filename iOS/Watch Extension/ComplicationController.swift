@@ -34,7 +34,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
 
         let myDelegate = WKExtension.shared().delegate as! ExtensionDelegate
-        let value = 7250//myDelegate.coinValue
+        let value = 15537//myDelegate.coinValue
 
         var entry : CLKComplicationTimelineEntry?
         let now = Date()

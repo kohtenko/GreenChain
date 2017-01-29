@@ -69,7 +69,10 @@ class MarketViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return items?[key(forSection: indexPath.section)]?[indexPath.row].image?.size ?? CGSize.zero
+        if let size = items?[key(forSection: indexPath.section)]?[indexPath.row].image?.size {
+            return CGSize(width: size.width, height: size.height + 48)
+        }
+        return CGSize.zero
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

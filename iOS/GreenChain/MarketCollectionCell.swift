@@ -11,10 +11,16 @@ import UIKit
 class MarketCollectionCell: UICollectionViewCell {
 
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var subnameLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
 
     var marketItem: MarketItem? {
         didSet {
             image.image = marketItem?.image
+            nameLabel.text = marketItem?.title
+            subnameLabel.text = marketItem?.subtitle
+            priceLabel.text = "\(marketItem?.price ?? 1)"
         }
     }
 }
