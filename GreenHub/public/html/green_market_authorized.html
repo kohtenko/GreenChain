@@ -2,6 +2,7 @@
     <head>
         <meta charset="utf-8"> <!-- needed for ether symbol to display correctly -->
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/style.css">
         <script src="https://blockone.thomsonreuters.com/wallet-bar/bundle.js"></script>
         <script src="https://rawgit.com/ethereum/web3.js/develop/dist/web3.min.js"></script>
     </head>
@@ -10,23 +11,23 @@
         <h1>Welcome Green Market Authorized Specislist!</h1>
 
         <span>Click this for new user: </span>
-        <button onclick="remove()">New User</button>
+        <button onclick="remove()">New User</button><br><br>
 
-        <span>Enter device ID that has been installed: </span><input id="device_id" type="text" /><br>
-        <span>Enter user ID (address): </span><input id="user_address" type="text" /><br>
+        <span>Enter device ID that has been installed: </span><input id="device_id" type="text" />
+        <span>Enter user ID (address): </span><input id="user_address" type="text" />
         <button onclick="install()">Install Device</button>
         <br><br><span id="status"></span>
       </div>
 
       <script>
           // PUT YOUR CONTRACT'S ABI HERE
-          var abi = [{"constant":true,"inputs":[],"name":"getEntitlement","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"device","type":"bytes32"},{"name":"user","type":"address"}],"name":"authorizedInstallDevice","outputs":[],"payable":false,"type":"function"}];
+          var abi = [{"constant":false,"inputs":[{"name":"user","type":"address"}],"name":"authorizedRemoveDevice","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"getEntitlement","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"device","type":"bytes32"},{"name":"user","type":"address"}],"name":"authorizedInstallDevice","outputs":[],"payable":false,"type":"function"}];
 
           // PUT YOUR UNIQUE DAPP ID HERE
           var dappId = "com.da.gc";
 
           // PUT YOUR CONTRACT ADDRESS HERE
-          var contractAddress = "0xe3fd246eb6e4c803465ce7db8139b0688cd1b63c";
+          var contractAddress = "0x158edc55a6bc6292f1a0255ae5db72dcf5a5a238";
 
           var walletBar = new WalletBar({
             dappNamespace: dappId,
@@ -62,17 +63,16 @@
             });
           }
           
-          function install() {
+          function remove() {
             var account = walletBar.getCurrentAccount(); // get account selected in wallet bar
-            if (!account) { return alert("You are not authorized to install devices."); }
+            if (!account) { return alert("You are not authorized to remove devices."); }
 
-            var deviceId = document.getElementById("device_id").value;
-            var userAddress = document.getElementById("user_address").value;
-
+            var user = "0x0b5f3410d265fbdf41ec0be07a39b68005b51a0e";
+            
             walletBar.createSecureSigner();
-            gcContract.authorizedInstallDevice.estimateGas(deviceId, userAddress, { from: account }, function (err1, gas) {
+            gcContract.authorizedRemoveDevice.estimateGas(user, { from: account }, function (err1, gas) {
               if(err1) { return alert("Error: " + err1); }
-              gcContract.authorizedInstallDevice.sendTransaction(deviceId, userAddress, { gas: gas, from: account }, function (err2, hash) {
+              gcContract.authorizedRemoveDevice.sendTransaction(user, { gas: gas, from: account }, function (err2, hash) {
                 if(err2) { return alert("Error: " + err2); }
 
                 document.getElementById("status").innerText = "Last vote Tx ID: " + hash;
