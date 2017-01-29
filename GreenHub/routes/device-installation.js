@@ -12,19 +12,23 @@ router.get('/install', function(req, res) {
      if (result === '0x0000000000000000000000000000000000000000') {
        blockchain.addDevice(homeDevice1, blockchain.user, (err, result) => {
          console.log(`Request to add ${ homeDevice1 }: ` + err + result); 
-       });       
+       });
      }
    });
-   
+
    blockchain.getUserByDevice(homeDevice2, (err, result) => {
      if (result === '0x0000000000000000000000000000000000000000') {
        blockchain.addDevice(homeDevice2, blockchain.user, (err, result) => {
          console.log(`Request to add ${ homeDevice2 }: ` + err + result);
-       });       
+       });
      }
    });
-   
+
    res.send('Installation is started.');
+});
+
+router.get('/authorized', function(req, res) {
+  res.sendFile(path.join(__dirname + '/../public/html/green_market_authorized.html'));
 });
 
 module.exports = router;
