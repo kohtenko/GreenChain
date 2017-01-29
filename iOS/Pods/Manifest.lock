@@ -5,6 +5,7 @@ PODS:
     - Charts/Core (= 3.0.1)
   - Charts/Core (3.0.1)
   - MBCircularProgressBar (0.3.5)
+  - SVProgressHUD (2.1.2)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -12,6 +13,7 @@ DEPENDENCIES:
   - AsyncSwift
   - Charts
   - MBCircularProgressBar
+  - SVProgressHUD
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -19,8 +21,9 @@ SPEC CHECKSUMS:
   AsyncSwift: 632138e42ead868b53c745fcde9bf733ce1527ad
   Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
   MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 1780646c1923c017b5f5f771184767f387dc1ff5
+PODFILE CHECKSUM: f8c42cf75014505a0e9573870d44498166c41790
 
 COCOAPODS: 1.1.1

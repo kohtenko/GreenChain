@@ -48,23 +48,23 @@ class MoneyViewController: UIViewController {
         setupAxis(chartView.rightAxis)
         setupAxis(chartView.leftAxis)
 
+        chartView.xAxis.labelPosition = .bottom
         chartView.legend.drawInside = false
         chartView.drawBarShadowEnabled = false;
         chartView.drawValueAboveBarEnabled = false
-
-
-
+        chartView.highlightPerTapEnabled = false
         chartView.maxVisibleCount = 10;
         chartView.chartDescription?.text = nil
     }
 
     func setupAxis(_ axis: AxisBase) {
-        axis.drawLabelsEnabled = false
         axis.drawGridLinesEnabled = false
         axis.drawAxisLineEnabled = false
         axis.drawAxisLineEnabled = false
+        axis.drawLabelsEnabled = false
         if let yAxis = axis as? YAxis {
             yAxis.drawTopYLabelEntryEnabled = false
+
         }
     }
 
@@ -79,9 +79,13 @@ class MoneyViewController: UIViewController {
         self.progressBar.layer.add(rotate, forKey: "rotation")
         update()
         let dataSet = BarChartDataSet(values: [
-            BarChartDataEntry(x: 1, yValues: [10], label: "label"),
+            BarChartDataEntry(x: 1, y: 10),
             BarChartDataEntry(x: 2, y: 50),
-            BarChartDataEntry(x: 3, y: 100),
+            BarChartDataEntry(x: 3, y: 90),
+            BarChartDataEntry(x: 4, y: 40),
+            BarChartDataEntry(x: 5, y: 75),
+            BarChartDataEntry(x: 6, y: 25),
+            BarChartDataEntry(x: 7, y: 60),
             ],
                                    label: nil)
         dataSet.colors = [NSUIColor(cgColor: self.progressBar.progressColor.cgColor)]

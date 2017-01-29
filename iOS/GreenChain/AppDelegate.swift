@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import WatchConnectivity
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -18,6 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let tabbarController = window?.rootViewController as! UITabBarController
         tabbarController.tabBar.barTintColor = UIColor.init(red: 39/255, green: 63/255, blue: 97/255, alpha: 0.5)
         tabbarController.tabBar.tintColor = UIColor.white
+        WCSession.default().sendMessage(["value": 1554],
+                                        replyHandler: { (response) in
+
+        }) { (error) in
+
+        }
         return true
     }
 
@@ -29,6 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+
+        let notification = UILocalNotification()
+        notification.alertBody = "Your purchase finished succesfully!"
+        notification.alertTitle = "Success"
+        notification.fireDate = Date().addingTimeInterval(1)
+        application.scheduleLocalNotification(notification)
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -42,6 +56,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
 }
 

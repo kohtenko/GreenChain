@@ -17,4 +17,5 @@ class MarketFooterTableViewCell: MarketBasicTableViewCell {
             descriptionLabel.text = item.description
         }
     }
+    
 }

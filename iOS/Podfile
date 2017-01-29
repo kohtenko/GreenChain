@@ -9,5 +9,6 @@ target 'GreenChain' do
     pod 'Alamofire'
     pod 'AsyncSwift'
     pod 'Charts'
+    pod 'SVProgressHUD'
 
 end

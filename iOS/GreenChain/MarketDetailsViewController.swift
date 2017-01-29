@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import SVProgressHUD
+import Alamofire
+import SwiftyJSON
 
 class MarketDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -58,6 +61,12 @@ class MarketDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         return cell
     }
 
-
+    @IBAction func buyPressed() {
+        SVProgressHUD.show(withStatus: "Placing you order")
+        Alamofire.request(BASE_URL + "green-market/buy/" + marketItem.title + "/\(marketItem.price)").responseJSON { (response) in
+            SVProgressHUD.showSuccess(withStatus: "Order is booked!")
+            SVProgressHUD.dismiss(withDelay: 1.5)
+        }
+    }
 
 }
