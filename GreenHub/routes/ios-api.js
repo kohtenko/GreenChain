@@ -57,11 +57,11 @@ const greenMarketGoods = {
       "description": "Milk is a pale liquid produced by the mammary glands of mammals. It is the primary source of nutrition for infant mammals (including humans who breastfeed)."
     },
     {
-      "title": "Meat Beef",
-      "subtitle": "1kg",
+      "title": "Green Power",
+      "subtitle": "Wt",
       "image": "f2",
-      "price": 42,
-      "description": "Beef is the culinary name for meat from cattle. Humans have been eating beef since prehistoric times. Beef is a complete source of protein, and provides many of the essential fatty acids, vitamins, and minerals that humans need."
+      "price": 8,
+      "description": "Green electricity means electricity produced from sources which do not cause these impacts upon the environment. Of course, every type of electricity generation will have some impact, but some sources are much greener than others."
     }
   ],
   "Organic Fruits": [
