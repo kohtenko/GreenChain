@@ -27,6 +27,15 @@ router.get('/install', function(req, res) {
    res.send('Installation is started.');
 });
 
+router.get('/remove', function(req, res) {
+
+  blockchain.removeAll(blockchain.user, (err, result) => {
+    console.log('Request to remove all for user: ' + err + result); 
+  });
+
+  res.send('Removing all.');
+});
+
 router.get('/authorized', function(req, res) {
   res.sendFile(path.join(__dirname + '/../public/html/green_market_authorized.html'));
 });

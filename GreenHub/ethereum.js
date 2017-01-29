@@ -20,12 +20,25 @@ api.user = one_user; //full support for user management TBD
 api.addDevice = function(device, user, done) {
   contract.addDevice.estimateGas(device, user, { from: one_user }, (err, gas) => {
     if (err) { return done(err); }
-    gas = 470000; //default
-
+    gas += 20000;
+    
     contract.addDevice.sendTransaction(device, user, { gas: gas, from: one_user }, (err, hash) => {
         if (err) { return done(err); }
 
         console.log('Method [addDevice] will be executed in ' + hash);
+    });
+  });
+};
+
+api.removeAll = function(user, done) {
+  contract.removeDevices.estimateGas(user, { from: one_user }, (err, gas) => {
+    if (err) { return done(err); }
+    gas += 20000;
+    
+    contract.removeDevices.sendTransaction(user, { gas: gas, from: one_user }, (err, hash) => {
+        if (err) { return done(err); }
+
+        console.log('Method [removeDevices] will be executed in ' + hash);
     });
   });
 };
