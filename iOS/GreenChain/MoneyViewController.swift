@@ -52,9 +52,7 @@ class MoneyViewController: UIViewController {
         chartView.legend.drawInside = false
         chartView.drawBarShadowEnabled = false;
         chartView.drawValueAboveBarEnabled = false
-
-
-
+        chartView.highlightPerTapEnabled = false
         chartView.maxVisibleCount = 10;
         chartView.chartDescription?.text = nil
     }
@@ -83,7 +81,7 @@ class MoneyViewController: UIViewController {
         let dataSet = BarChartDataSet(values: [
             BarChartDataEntry(x: 1, y: 10),
             BarChartDataEntry(x: 2, y: 50),
-            BarChartDataEntry(x: 3, y: 100),
+            BarChartDataEntry(x: 3, y: 90),
             BarChartDataEntry(x: 4, y: 40),
             BarChartDataEntry(x: 5, y: 75),
             BarChartDataEntry(x: 6, y: 25),
